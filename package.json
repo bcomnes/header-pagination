@@ -1,0 +1,34 @@
+{
+  "name": "header-pagination",
+  "description": "WIP - nothing to see here",
+  "version": "0.0.0",
+  "main": "index.js",
+  "module": "main.js",
+  "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
+  "bugs": {
+    "url": "https://github.com/bcomnes/header-pagination/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dependency-check": "^4.1.0",
+    "esm": "^3.2.25",
+    "node-fetch": "^2.6.0",
+    "npm-run-all": "^4.1.5",
+    "semistandard": "^14.2.0",
+    "tape": "^4.11.0",
+    "tape-promise": "^4.0.0"
+  },
+  "homepage": "https://github.com/bcomnes/header-pagination",
+  "keywords": [],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcomnes/header-pagination.git"
+  },
+  "scripts": {
+    "test": "run-s test:*",
+    "test:deps": "dependency-check . --no-dev --no-peer",
+    "test:standard": "semistandard",
+    "test:tape": "tape -r esm test.js"
+  }
+}
