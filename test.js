@@ -4,8 +4,8 @@ import { getPagination } from './main';
 import fetch from 'node-fetch';
 const test = ptape(tape);
 
-test('header extraction', async t => {
-  fetch('https://api.github.com/users/bcomnes/repos')
+test('header extraction', t => {
+  return fetch('https://api.github.com/users/bcomnes/repos')
     .then(async response => {
       const pagination = getPagination(response);
       t.ok(pagination.next);
