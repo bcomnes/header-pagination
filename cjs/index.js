@@ -3,7 +3,7 @@ function getPagination (headers) {
   let links
 
   try {
-    links = headers.Link || headers.get('Link')
+    links = headers.Link || headers.link || headers.get('Link')
   } catch (e) {
     /* swallow */
   }
@@ -16,7 +16,7 @@ function getPagination (headers) {
   let total
 
   try {
-    total = headers['X-Total-Count'] || headers.get('X-Total-Count')
+    total = headers['X-Total-Count'] || headers['x-total-count'] || headers.get('X-Total-Count')
   } catch (e) {
     /* swallow */
   }
