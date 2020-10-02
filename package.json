@@ -1,7 +1,7 @@
 {
   "name": "header-pagination",
   "description": "WIP - nothing to see here",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -34,7 +34,7 @@
   "scripts": {
     "build": "rimraf cjs/* && ascjs esm cjs",
     "prepare": "npm run build",
-    "prepublishOnly": "git push --follow-tags && gh-release",
+    "prepublishOnly": "git push --follow-tags && gh-release -y",
     "test": "run-s build test:*",
     "test:deps": "dependency-check package.json --no-dev --no-peer",
     "test:standard": "standard",
