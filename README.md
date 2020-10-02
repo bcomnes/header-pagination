@@ -1,4 +1,5 @@
 # header-pagination
+[![Actions Status](https://github.com/bcomnes/header-pagination/workflows/tests/badge.svg)](https://github.com/bcomnes/header-pagination/actions)
 
 Parse rfc5988 style pagination Link headers from a [`fetch`][fetch] [`Response`][response] object.
 
@@ -12,7 +13,7 @@ npm install header-pagination
 import { getPagination } from 'header-pagination'
 
 window.fetch(req).then(async response => {
-  const headers = getPagination(response)
+  const pagination = getPagination(response.headers)
   // {
   //    last,
   //    next,

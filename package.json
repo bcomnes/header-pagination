@@ -1,22 +1,28 @@
 {
   "name": "header-pagination",
   "description": "WIP - nothing to see here",
-  "version": "1.0.0",
-  "main": "index.js",
-  "module": "main.js",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
   "bugs": {
     "url": "https://github.com/bcomnes/header-pagination/issues"
   },
   "dependencies": {},
   "devDependencies": {
-    "dependency-check": "^4.1.0",
-    "esm": "^3.2.25",
-    "node-fetch": "^2.6.0",
+    "ascjs": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "semistandard": "^14.2.0",
-    "tape": "^4.11.0",
-    "tape-promise": "^4.0.0"
+    "dependency-check": "^4.1.0",
+    "node-fetch": "^2.6.0",
+    "standard": "^14.3.3",
+    "auto-changelog": "^2.0.0",
+    "tap": "^14.10.8",
+    "gh-release": "^4.0.0"
   },
   "homepage": "https://github.com/bcomnes/header-pagination",
   "keywords": [],
@@ -26,9 +32,25 @@
     "url": "https://github.com/bcomnes/header-pagination.git"
   },
   "scripts": {
-    "test": "run-s test:*",
-    "test:deps": "dependency-check . --no-dev --no-peer",
-    "test:semistandard": "semistandard",
-    "test:tape": "tape -r esm test.js"
+    "build": "rimraf cjs/* && ascjs esm cjs",
+    "prepare": "npm run build",
+    "prepublishOnly": "git push --follow-tags && gh-release",
+    "test": "run-s build test:*",
+    "test:deps": "dependency-check package.json --no-dev --no-peer",
+    "test:standard": "standard",
+    "test:tap": "tap --no-esm --jobs=1",
+    "version": "run-s prepare version:*",
+    "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
+    "version:git": "git add CHANGELOG.md cjs"
+  },
+  "standard": {
+    "ignore": [
+      "dist",
+      "cjs"
+    ]
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/bcomnes"
   }
 }
