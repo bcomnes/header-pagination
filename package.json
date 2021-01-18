@@ -22,7 +22,7 @@
     "standard": "^16.0.0",
     "auto-changelog": "^2.0.0",
     "tap": "^14.10.8",
-    "gh-release": "^4.0.0"
+    "gh-release": "^5.0.0"
   },
   "homepage": "https://github.com/bcomnes/header-pagination",
   "keywords": [],
