@@ -15,7 +15,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "ascjs": "^4.0.0",
+    "ascjs": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "dependency-check": "^4.1.0",
     "node-fetch": "^2.6.0",
