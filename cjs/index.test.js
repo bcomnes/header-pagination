@@ -1,7 +1,7 @@
 'use strict';
-const tap = (m => m.__esModule ? /* istanbul ignore next */ m.default : /* istanbul ignore next */ m)(require('tap'))
+const tap = (m => /* c8 ignore start */ m.__esModule ? m.default : m /* c8 ignore stop */)(require('tap'))
 const { getPagination } = require('./index.js')
-const fetch = (m => m.__esModule ? /* istanbul ignore next */ m.default : /* istanbul ignore next */ m)(require('node-fetch'))
+const fetch = (m => /* c8 ignore start */ m.__esModule ? m.default : m /* c8 ignore stop */)(require('node-fetch'))
 
 tap.test('header extraction', async (t) => {
   const response = await fetch('https://api.github.com/users/bcomnes/repos')
