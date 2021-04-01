@@ -21,7 +21,7 @@
     "node-fetch": "^2.6.0",
     "standard": "^16.0.0",
     "auto-changelog": "^2.0.0",
-    "tap": "^14.10.8",
+    "tap": "^15.0.1",
     "gh-release": "^5.0.0"
   },
   "homepage": "https://github.com/bcomnes/header-pagination",
