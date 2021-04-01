@@ -21,7 +21,7 @@
     "node-fetch": "^2.6.0",
     "standard": "^16.0.0",
     "auto-changelog": "^2.0.0",
-    "tap": "^14.10.8",
+    "tap": "^15.0.1",
     "gh-release": "^5.0.0"
   },
   "homepage": "https://github.com/bcomnes/header-pagination",
@@ -38,7 +38,7 @@
     "test": "run-s build test:*",
     "test:deps": "dependency-check package.json --no-dev --no-peer",
     "test:standard": "standard",
-    "test:tap": "tap --no-esm --jobs=1",
+    "test:tap": "tap --no-check-coverage --jobs=1",
     "version": "run-s prepare version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
     "version:git": "git add CHANGELOG.md cjs"
