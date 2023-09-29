@@ -21,7 +21,7 @@
     "node-fetch": "^2.6.0",
     "standard": "^17.0.0",
     "auto-changelog": "^2.0.0",
-    "tap": "^16.0.0",
+    "tap": "^18.4.0",
     "gh-release": "^7.0.0"
   },
   "homepage": "https://github.com/bcomnes/header-pagination",
@@ -38,7 +38,7 @@
     "test": "run-s build test:*",
     "test:deps": "dependency-check package.json --no-dev --no-peer",
     "test:standard": "standard",
-    "test:tap": "tap --no-check-coverage --jobs=1",
+    "test:tap": "tap",
     "version": "run-s prepare version:*",
     "version:changelog": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:'",
     "version:git": "git add CHANGELOG.md cjs"
@@ -52,5 +52,14 @@
   "funding": {
     "type": "individual",
     "url": "https://github.com/sponsors/bcomnes"
+  },
+  "tap": {
+    "serial": [],
+    "typecheck": false,
+    "allow-incomplete-coverage": true,
+    "coverage-report": [
+      "text",
+      "lcovonly"
+    ]
   }
 }
